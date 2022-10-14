@@ -1,6 +1,3 @@
-from heapq import merge
-
-
 def fn(x, y):
     """
     Funkciji se predaju dva parametra. Provjera se jesu li parametri istog tipa,
