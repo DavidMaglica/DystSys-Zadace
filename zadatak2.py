@@ -5,13 +5,10 @@ def fn(ls, dikt):
     liste tipa integer. Vraca novi dictionary, gdje je value element iz liste na
     tom indexu ako se nalazi unutar [5,10] ako ne upisuje -1.
     """
-    if isinstance(ls, list) and isinstance(dikt, dict):
-        if len(ls) == len(dikt):
-            for item in ls:
-                if isinstance(item, int):
-                    return({k:v for k, v in zip(dikt, ls) if v in range(5, 11)}) # range(5, 11) zbog off by one behavioura
+    if isinstance(ls, list) and isinstance(dikt, dict) and len(ls) == len(dikt):
+        return({k:v if v in range(5, 11) and isinstance(k, int) else -1 for k, v in zip(dikt, ls) }) # range(5, 11) zbog off by one behavioura
     else:
-        print("error")
+        return("Error")
 
 
 print(fn([8,7,1], {1:2,2:1,3:2}))
