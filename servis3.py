@@ -11,8 +11,6 @@ async def get_random_user(se):
         json = await result.json()
         json = json ["results"][0]
         return json
-        
-
 
 @routes.post("/charityAndRecreational")
 async def charity_recreational(request):

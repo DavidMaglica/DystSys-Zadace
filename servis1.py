@@ -26,10 +26,10 @@ async def get_activity(request):
                         json = bored_data[i]
                     )))
 
-                res = await asyncio.gather(*tasks)
-                res = [await data.json() for data in res]
+                result = await asyncio.gather(*tasks)
+                result = [await data.json() for data in result]
         
-        return web.json_response(res)
+        return web.json_response(result)
 
     except Exception as e:
         return web.json_response({ "Failed": str(e) }, status = 500)
